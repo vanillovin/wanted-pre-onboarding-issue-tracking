@@ -33,17 +33,24 @@ export const ContainerCards = ({
       {items.map((item, index) => (
         <div
           key={index}
-          className="bg-violet-500 rounded-sm m-2 p-2"
+          className={`card bg-violet-500 rounded-sm m-2 p-2 ${
+            isDragging ? 'card-dragging' : ''
+          }`}
           draggable
           onDragStart={() => handlers.handleDragStart(item)}
           onDragEnter={() => handlers.handleDragEnter(index)}
           onDragEnd={handlers.handleDragEnd}
         >
           <p className="bg-transparent font-semibold text-white">
-            {item.content}
+            {item.content} ({index})
           </p>
         </div>
       ))}
+      <div
+        className="p-1 m-1 bg-opacity-0"
+        onDragEnter={() => handlers.handleDragEnter(items.length)}
+        onDragEnd={handlers.handleDragEnd}
+      />
     </div>
   );
 };

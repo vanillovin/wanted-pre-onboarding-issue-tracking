@@ -71,8 +71,18 @@ body {
   text-transform: capitalize;
 }
 
+.card {
+  cursor: pointer;
+  user-select: none;
+}
+
 .layout-dragging {
   background: #ffffff17;
+  border: 2px dashed #ffffff8c;
+}
+
+.card:active.card-dragging {
+  opacity: 0.7;
   border: 2px dashed #ffffff8c;
 }
 

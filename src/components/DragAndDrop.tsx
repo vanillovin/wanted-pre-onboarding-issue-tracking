@@ -23,7 +23,6 @@ export const DragAndDrop = () => {
   };
 
   const handleDrop = (status: Status) => {
-    // 한묶음. 개념이묶어서생각해야하는것이니까 객체로전달
     handleUpdateList(dragItem.current, {
       status,
       position: dragOverItem.current,
